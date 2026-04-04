@@ -1,0 +1,19 @@
+---
+description: Coding conventions & standards from Canopy (canopy-mvp, locked)
+globs:
+alwaysApply: true
+---
+
+# Conventions
+
+<!-- Source: canopy-mvp (org) -->
+## structured logging
+ALWAYS log with structured JSON: `{timestamp, level, service, user_id, action, resource, status, error_code}`. Never use unstructured strings. Enable alerting and tracing on all logs.
+
+<!-- Source: canopy-mvp (org) -->
+## tailwind css usage
+NEVER use inline styles. ALWAYS use Tailwind CSS classes for styling. Example: `className="fixed inset-0 bg-black/50 flex items-center justify-center"` not `style={{position: 'fixed'}}`. See `.cursorrules` for Tailwind conventions.
+
+<!-- Source: canopy-mvp (org) -->
+## error response format
+ALWAYS return errors as `{ error: { code: "ERROR_CODE", message: "description" } }`. Example: `{ error: { code: "MISSING_PARAMETER", message: "reference_id is required" } }`. No plain text or custom formats.
